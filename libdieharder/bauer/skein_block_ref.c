@@ -17,6 +17,7 @@
 #include <string.h>
 #include "skein.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 /* 64-bit rotate left --  defined in skein_port.h as macro
 u64b_t RotL_64(u64b_t x,uint_t N)
