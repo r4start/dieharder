@@ -113,6 +113,10 @@ void dieharder_rng_types()
  dh_num_dieharder_rngs++;
  ADD(gsl_rng_superkiss);
  dh_num_dieharder_rngs++;
+ ADD(gsl_rng_cpp_mt19937);
+ dh_num_dieharder_rngs++;
+ ADD(gsl_rng_cpp_bad_mt19937);
+ dh_num_dieharder_rngs++;
  MYDEBUG(D_TYPES){
    printf("# startup:  Found %u dieharder rngs.\n",dh_num_dieharder_rngs);
  }

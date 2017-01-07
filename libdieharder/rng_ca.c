@@ -129,9 +129,9 @@ ca_set (void *vstate, unsigned long int s) {
  int i;
 
  /* clear cells */
- for (i = 0; i < CA_WIDTH - 1; i++) 
-
+ for (i = 0; i < CA_WIDTH - 1; i++) {
    init_config[i] = 0;
+ }
 
    /* set initial cell states using seed */
    init_config[CA_WIDTH - 1] = (unsigned char)(seed);

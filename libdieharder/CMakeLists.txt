@@ -53,7 +53,9 @@ set(LIBDIEHARDER_SOURCES
       rngs_gnu_r.c 
       rng_kiss.c 
       rng_jenkins.c 
-      rng_superkiss.c 
+      rng_mt_19937.c
+      rng_bad_mt_19937.c
+      rng_superkiss.c
       rng_stdin_input_raw.c 
       rng_threefish.c 
       rng_uvag.c 
@@ -71,5 +73,10 @@ set(LIBDIEHARDER_SOURCES
       Xtest.c)
 
 add_subdirectory(bauer)
+add_subdirectory(cxx_rngs)
 
 add_library(${PROJECT_NAME} SHARED ${LIBDIEHARDER_SOURCES} bauer)
+
+# C++ library have to be added through 'target_link_libraries'
+# because linkage fails if we add it through 'add_library'
+target_link_libraries(${PROJECT_NAME} cxx_rngs)
